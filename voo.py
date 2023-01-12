@@ -9,6 +9,7 @@ class Voo:
         self.__assentosLivres=assentosLivres
         self.__tripulacao=tripulacao
         self.__tipo=tipo
+        self.reservas=[]
     def get_Codigo(self):
         return self.__codigo
     def set_Codigo(self,codigo):

@@ -11,5 +11,5 @@ class Passageiro:
         pass
     def cancelarReserva(self,codigo):
         pass
-    def criarReserva(self):
+    def criarReserva(self,voo):
         self.codigo=randint(0,10000)

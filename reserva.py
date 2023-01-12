@@ -9,4 +9,6 @@ class Reserva:
         return self.__codigo
     def set_codigo(self,codigo):
         self.__codigo=codigo
+    def cancelarReserva(self):
+        pass
         

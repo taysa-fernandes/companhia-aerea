@@ -1,6 +1,7 @@
 class Operadores:
     def __init__(self,matricula):
         self.__matricula=matricula
+        self.reservas=[]
     def get_matricula(self):
         return self.__matricula
     def set_matricula(self,matricula):
