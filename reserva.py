@@ -11,4 +11,3 @@ class Reserva:
         self.__codigo=codigo
     def cancelarReserva(self):
         pass
-        
