@@ -12,12 +12,9 @@ class Operadores:
 
     def criar_reserva(self,voo,passageiro):
         codigo = randint(0,10000)
-        reserva = Reserva(codigo, passageiro, "Pagamento pendente", voo)
-        passageiro.set_voo(passageiro.get_)
-        voo.set_reservas(voo.get_reservas().append(reserva))
+        Reserva(codigo, passageiro, "Pagamento pendente", voo)
         print("Reserva realizada!")
 
 
-    def cancelar_reserva(self,reserva):
-        reserva.set_status("Cancelado")
-        print("Reserva cancelada")
+    def cancelar_reserva(self,code,passageiro):
+        passageiro.cancelar_reserva(code)

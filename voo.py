@@ -69,6 +69,9 @@ class Voo:
 
     def set_reservas(self, reservas):
         self.__reservas = reservas
+    
+    def add_reserva(self,reserva):
+        self.__reservas.append(reserva)
 
     def __str__(self):
         return "{}\nTipo: {}\nQtd.Assentos Vagos: {}\nTripulação\n: {}\nReservas:{}".format(self.get_name(),self.__tipo,self.__assentosLivres - len(self.__reservas),self.__tripulacao,self.__reservas)

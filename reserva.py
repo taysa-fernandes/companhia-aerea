@@ -5,6 +5,9 @@ class Reserva:
         self.__passageiro=passageiro
         self.__status = status
         self.__voo = voo
+        voo.add_reserva(self)
+        passageiro.add_reserva(self)
+       
 
     def get_codigo(self):
         return self.__codigo
@@ -29,3 +32,6 @@ class Reserva:
     
     def get_voo(self, voo):
         self.__voo = voo
+
+    def __str__(self):
+        return "Código:{}\nVoo:{}\nStatus:{}\nPassageiro:{}\n".format(self.__codigo, self.__voo.get_name(),self.__status, self.__passageiro.get_cpf())

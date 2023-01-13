@@ -69,8 +69,15 @@ def category_voo():
 
 def category_passageiro():
     pular_linhas()
-    print("============ DIGITE O NÚMERO DA OPERAÇÃO DESEJADA: ============\n1.Criar Passageiro\n2.Ver lista de Passageiros\n3.Criar Reserva\n4.Cancelar Reserva\n5.Sair\n=================================================================")
+    print("============ DIGITE O NÚMERO DA OPERAÇÃO DESEJADA: ============\n1.Criar Passageiro\n2.Ver lista de Passageiros\n3.Criar Reserva\n4.Pagar Reserva\n5.Cancelar Reserva\n6.Reservas de 1 passageiro\n7.Sair\n=================================================================")
     option = int(input())
+
+    if option == 1:
+        pular_linhas()
+        print("Digite o CPF do passageiro:")
+        cpf = input()
+        list_passageiros.append(Passageiro(cpf))
+
     if option == 2:
         pular_linhas()
         print("============ LISTA DE PASSAGEIROS: ============")
@@ -78,6 +85,44 @@ def category_passageiro():
             print("{}. {}".format(x, list_passageiros[x].get_cpf()))
         print("===============================================")
         print("\n" * 2)
+
+    if option == 3:
+        pular_linhas()
+        print("Digite respectivamente o número do Voo e o número do passageiro:")
+        voo = int(input())
+        passageiro = int(input())
+
+        voo = list_voos[voo]
+        passageiro = list_passageiros[passageiro]
+        
+        passageiro.criar_reserva(voo)
+
+    if option == 4:
+        pular_linhas()
+        print("Digite respectivamente o número do passageiro e o código da reserva:")
+        passageiro = int(input())
+        code = float(input())
+        passageiro= list_passageiros[passageiro]
+        passageiro.pagar_reserva(code)
+
+    if option == 5:
+        pular_linhas()
+        print("Digite respectivamente o número do passageiro e o código da reserva:")
+        passageiro = int(input())
+        code = float(input())
+        passageiro= list_passageiros[passageiro]
+        passageiro.cancelar_reserva(code)
+
+    if option == 6:
+        pular_linhas()
+        print("Digite o número do passageiro:")
+        passageiro = int(input())
+        reserevas  = list_passageiros[passageiro].get_reservas()
+        
+        print(reserevas)
+        pular_linhas()
+        for x in range(len(reserevas)):
+            print("{}.{}".format(x,reserevas[x]))
 
 def category_operador():
     pular_linhas()
@@ -107,8 +152,19 @@ def category_operador():
         passageiro = int(input())
         operador = list_operadores[index]
         voo = list_voos[voo]
-        passageiro = list_voos[passageiro]
+        passageiro = list_passageiros[passageiro]
         operador.criar_reserva(voo,passageiro)
+    
+    if option == 4:
+        pular_linhas()
+        print("Digite respectivamente o número do operador, número do passageiro e o código da reserva:")
+        operador = int(input())
+        passageiro = int(input())
+        code = float(input())
+        operador = list_operadores[operador]
+        passageiro = list_passageiros[passageiro]
+
+        operador.cancelar_reserva(code,passageiro)
 
     
 while True:
