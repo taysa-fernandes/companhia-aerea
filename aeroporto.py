@@ -23,4 +23,4 @@ class Aeroporto:
         self.__capacidadeDecolagem=capacidadeDecolagem
     
     def __str__(self):
-        return "{}/Cidade:{}/Capacidade de decolagem".format(self.__nome,self.__cidade,self.__capacidadeDecolagem)
+        return "{}/Cidade:{}/Capacidade de decolagem:{}".format(self.__nome,self.__cidade,self.__capacidadeDecolagem)
