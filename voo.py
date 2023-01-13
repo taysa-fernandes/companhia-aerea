@@ -1,11 +1,11 @@
-from datetime import datetime
+import datetime
 from random import randint
 class Voo:
     def __init__(self,horario,aeroportoS,aeroportoD,assentosLivres,tripulacao,tipo):
 
         self.__codigo=randint(0,10000)
         self.__horario=horario
-        self.__data = datetime.today()
+        self.__data = datetime.date.today()
         self.__aeroportoS=aeroportoS
         self.__aeroportoD=aeroportoD
         self.__assentosLivres=assentosLivres
@@ -14,7 +14,7 @@ class Voo:
         self.__reservas=[]
 
     def get_name(self):
-        return "".format()
+        return "{} => {} ({} | {})".format(self.__aeroportoS.get_nome(), self.__aeroportoD.get_nome(), self.__horario,self.__data)
 
     def get_codigo(self):
         return self.__codigo
@@ -69,3 +69,6 @@ class Voo:
 
     def set_reservas(self, reservas):
         self.__reservas = reservas
+
+    def __str__(self):
+        return "{}\nTipo: {}\nQtd.Assentos Vagos: {}\nTripulação\n: {}\nReservas:{}".format(self.get_name(),self.__tipo,self.__assentosLivres - len(self.__reservas),self.__tripulacao,self.__reservas)
