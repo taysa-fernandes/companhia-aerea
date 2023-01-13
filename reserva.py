@@ -35,3 +35,6 @@ class Reserva:
 
     def __str__(self):
         return "Código:{}\nVoo:{}\nStatus:{}\nPassageiro:{}\n".format(self.__codigo, self.__voo.get_name(),self.__status, self.__passageiro.get_cpf())
+    
+    def __repr__(self):
+          return "Código:{}\nVoo:{}\nStatus:{}\nPassageiro:{}\n".format(self.__codigo, self.__voo.get_name(),self.__status, self.__passageiro.get_cpf())
